@@ -22,6 +22,11 @@ Content-Length: 233
 
 Fixed sensors mounted in the physical environment detect the beacons, and make an HTTP GET request to the advertised URL, fetching the current revision of the person's data.  The sensor then updates it with the sensor's location, and makes an HTTP PUT request to update the resource.
 
+Companies with multiple locations and staff who are mobile often find it hard to know where individuals are, and whether it's reasonable to bother them: they could be working at another office, or could be on holiday.  With beacons, it's possible to easily know when a user is at work and where they are.
+
+Conventional means of manually updating status are prone to error because users tend to forget to do it, security data from keycard swipes is often hard to extract from proprietary systems, tracking based on DHCP allocation is easily misled by VPNs, and tracking based on smartphone GPS has many privacy issues.  Beacons seem to offer an open standards solution that's also possible to operate securely such that the organisation cannot track the user when outside the office, and the signal broadcast by the beacon does not identify the user in a way that's useful to any third party.
+
+
 ## Beacons
 
 I purchased some pre-made beacons from [Blesh](https://www.blesh.com/physical-web/), but if you're more of a hacker than me I'm told they're not hard to build.  A guide and bill of materials is available on [Openbeacon](http://get.openbeacon.org/device.html).  The blesh beacons ship in plastic cases around the size of a ginger nut biscuit:
@@ -146,5 +151,5 @@ function(doc) {
 
 Future development ideas:
 
-* Authentication
+* Authentication (or use URL that's only accessible within private network)
 * UI to display the view
