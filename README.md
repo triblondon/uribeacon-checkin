@@ -118,6 +118,8 @@ npm install
 LOCATION_DESC="FT Labs office" node index.js
 ```
 
+On the Pi you may need to run using `sudo` to give Node access to the bluetooth hardware.
+
 ## Server
 
 The server can be anything that serves JSON and permits clients to perform GET and PUT operations, but a CouchDB database works pretty well.  I used [Cloudant](http://www.cloudant.com).  Set up a new database, allow public read/write (this ought to be authenticated, but it's only an in/out board).  Create a record for each person with at least `lastSeenLocation` and `lastSeenDate` on each record.  You can add whatever other fields you want, the sensor doesn't care and will not overwrite them.
@@ -125,7 +127,7 @@ The server can be anything that serves JSON and permits clients to perform GET a
 Cloudant then provides an API URL for the document, which will look something like:
 
 ```
-https:// {accountName} .cloudant.com/ {datbaseName} / {docID}
+https:// {accountName} .cloudant.com/ {databaseName} / {docID}
 ```
 
 ### Reporting
@@ -139,3 +141,10 @@ function(doc) {
   }
 }
 ```
+
+## Ideas
+
+Future development ideas:
+
+* Authentication
+* UI to display the view
