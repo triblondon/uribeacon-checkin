@@ -6,7 +6,7 @@ var moment = require('moment');
 
 var uribeaconUUID = 'fed8';
 var location = process.env.LOCATION_DESC || 'Unknown';
-var updateInterval = 30 * 60;
+var updateInterval = process.env.UPDATE_INTERVAL || 30 * 60;
 
 // Set up logging.  If a Logentries token has been provided, log to hosted service
 var logStreams = [{stream: process.stdout, level: 'trace'}];
